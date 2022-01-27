@@ -1,0 +1,52 @@
+.introduction-container{
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.introduction-container p{
+  margin-right: 20px;
+}
+
+.title{
+  background-color: rgb(255, 238, 218);
+  padding: 5px 0px 5px 20px;
+  font-family: 'Oswald';
+  border-bottom: solid 4px black;
+}
+
+.photo-explanation{
+  text-align: center;
+}
+
+.photo-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+.photo-container .photo{
+  padding-right: 10px;
+}
+
+.processing h2{
+  text-align: center;
+  margin: 80px 0px 80px 0px;
+}
+
+.processing-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  height: 350px;
+}
+
+.processing-container .photo .photo-explanation{
+  font-size: 30px;
+  font-weight: bold;
+}

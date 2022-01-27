@@ -1,11 +1,61 @@
-<html>
-    <body>
-        <h1>This is Super-Resolution</h1>
-        <h3>
-          and the result is
-          {% if result %}
-            {{ result }}
-          {% endif %}
-        </h3>
-    </body>
+<!DOCTYPE html>
+<html
+  <head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="common.css">
+    <title>RIW</title>
+  </head
+
+  <body>
+    <div class="header">
+      <h1><a href="main.html">Welcome to RIW</a></h1>
+    </div>
+
+    <div class="row">
+      <!-- About Website -->
+      <div class="introduction">
+        <h1 class="title">About this WebSite</h1>
+        <div class="introduction-container">
+          <p>
+            Improve the resolution of your image or video for free!<br>
+            Our website uses deep-learning to create enhanced files.<br>
+            But you don't need to know about it in detail.<br>
+            Just follow the instructions on the website and you will be fine.
+          </p>
+          <div class="photo-container">
+            <div class="photo">
+              <img src="images/best_photo1.png" style="height:150px;">
+              <div class="photo-explanation">Before</div>
+            </div>
+            <div class="photo">
+              <img src="images/best_photo1.png" style="height:150px;">
+              <div class="photo-explanation">After</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="processing">
+        <h1 class="title">Processing</h1>
+        <h2>Please select the type of files you want to process</h2>
+        <div class="processing-container">
+          <div class="photo">
+            <img src="images/image.png" style="height:200px;">
+            <div class="photo-explanation">Image</div>
+          </div>
+          <div class="photo">
+            <img src="images/video.png" style="height:200px;">
+            <div class="photo-explanation">Video</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer">
+      <div class="contact-info">
+        <p>Email: abcde@gmail.com</p>
+        <p>Phone number: 010-0000-0000</p>
+      </div>
+    </div>
+  </body>
 </html>
