@@ -1,2 +1,2 @@
-# Resolution-Improvement-Website
-이미지 및 영상 화질 향상시키는 웹 코드
+# 진행 상황
+- 파이썬에서 html 코드 
