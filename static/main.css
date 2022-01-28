@@ -34,7 +34,7 @@
 
 .processing h2{
   text-align: center;
-  margin: 80px 0px 80px 0px;
+  margin: 80px 0px 0px 0px;
 }
 
 .processing-container{
@@ -49,4 +49,46 @@
 .processing-container .photo .photo-explanation{
   font-size: 30px;
   font-weight: bold;
+}
+
+.upload-box{
+    text-align: center
+    width:1150px;
+    height: 600px;
+    border:1px solid gray;
+    box-shadow: 2px 3px 9px hsl(0, 0%, 47%);
+    margin-bottom: 15px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 550px;
+    color: rgb(145, 145, 145);
+    font-style: italic;
+}
+
+.input-btn{
+  font-size: 20px;
+}
+
+#sec{
+    margin:50px 25px 50px 25px;
+}
+
+.selected{
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.selected-zone{
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: rgba(221, 196, 255, 0.45)
+}
+
+.process-btn{
+  display: none;
+  font-size: 40px;
+  margin: auto;
 }

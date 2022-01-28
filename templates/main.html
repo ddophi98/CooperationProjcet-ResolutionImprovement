@@ -3,12 +3,13 @@
   <head>
     <link rel="stylesheet" href="/static/main.css">
     <link rel="stylesheet" href="/static/common.css">
+    <script src="/static/fileprocess.js"></script>
     <title>RIW</title>
   </head
 
   <body>
     <div class="header">
-      <h1><a href="main.html">Welcome to RIW</a></h1>
+      <h1><a href="main.html">Resolution Improvement Website</a></h1>
     </div>
 
     <div class="row">
@@ -37,18 +38,19 @@
 
       <div class="processing">
         <h1 class="title">Processing</h1>
-        <h2>Please select the type of files you want to process</h2>
-        <div class="processing-container">
-          <div class="photo">
-            <img src="/static/images/image.png" style="height:200px;">
-            <div class="photo-explanation">Image</div>
+        <h2>Please upload the files you want to process</h2>
+        <section id="sec">
+          <div class="upload-box">
+            Drag the files
           </div>
-          <div class="photo">
-            <img src="/static/images/video.png" style="height:200px;">
-            <div class="photo-explanation">Video</div>
+          <input multiple="multiple" class="input-btn" type="file" accept="video/*, image/*"><br>
+          <div class="selected">
+            Selected Files
+            <div class="selected-zone"></div>
           </div>
-        </div>
-      </div>
+          <button type="button" class="process-btn">Process</button>
+      </section>
+    </div>
 
     </div>
     <div class="footer">

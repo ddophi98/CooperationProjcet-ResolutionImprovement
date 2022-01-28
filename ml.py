@@ -2,12 +2,8 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def home():
-    return 'Hello~~~'
-
-@app.route("/test")
-def finance():
     a = 3
     b = 5
     rst = a + b
