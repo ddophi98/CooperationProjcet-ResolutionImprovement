@@ -66,4 +66,26 @@ window.onload = function(){
     processFiles(files);
   });
 
+  // 파일 처리 버튼 눌렀을 때
+  processBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    for(i = 0; i < selectedFiles.length; i++){
+      formData.append('uploadFile[]', selectedFiles[i]);
+    }
+
+    $.ajax({
+      type: 'POST',
+      url: '/data',
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false,
+      success: function(r){
+        console.log("성공")
+        console.log(selectedFiles.length)
+      }
+    })
+  });
+
 }
