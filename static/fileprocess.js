@@ -40,12 +40,12 @@ window.onload = function(){
      else{
          this.style.backgroundColor = 'rgb(115, 212, 143)';
      }
-  });
+  })
 
   // 박스 밖으로 Drag가 나갈 때
   uploadBox.addEventListener('dragleave', function(e) {
      this.style.backgroundColor = 'white';
-  });
+  })
 
 
   // 박스 안에서 Drag를 Drop했을 때
@@ -56,7 +56,7 @@ window.onload = function(){
      var files = e.dataTransfer && e.dataTransfer.files;
      processFiles(files)
 
-  });
+  })
 
 
   // 버튼으로 파일 선택했을 때
@@ -64,29 +64,28 @@ window.onload = function(){
   inputBtn.addEventListener('change', function(e) {
     var files = this.files;
     processFiles(files);
-  });
+  })
 
   // 파일 처리 버튼 눌렀을 때
   processBtn.addEventListener('click', function(e) {
+    console.log("100");
     e.preventDefault();
+    console.log("200");
+    console.log(selectedFiles.length);
+    console.log("300");
     const formData = new FormData();
     for(var i = 0; i < selectedFiles.length; i++){
       formData.append('uploadFile[]', selectedFiles[i]);
     }
-
+    console.log("400");
     $.ajax({
       type: 'POST',
       url: '/process',
       data: formData,
-      dataType: 'json',
       processData: false,
       contentType: false,
-      success: function(r){
-        console.log("성공")
-        console.log(selectedFiles.length)
-      }
     })
-
-    //location.href = "./process"
-  });
+    console.log("500");
+    location.href = "./process";
+  })
 }

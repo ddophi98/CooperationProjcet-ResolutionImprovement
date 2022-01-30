@@ -30,7 +30,7 @@ def process():
         while not os.path.isfile("files\complete.txt"):
             print("no")
         print("yes")
-        return render_template('main.html')
+        return render_template('process.html')
 
 
 if __name__ == "__main__":
