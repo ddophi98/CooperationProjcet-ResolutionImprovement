@@ -6,7 +6,7 @@ window.onload = function(){
   var selectedFiles = [];
 
   // 선택된 파일 처리하기
-  var processFiles = function(files){
+  function processFiles(files){
     if (files != null) {
       selectedZone.innerHTML = ""
       notAllowed = false;
@@ -70,13 +70,13 @@ window.onload = function(){
   processBtn.addEventListener('click', function(e) {
     e.preventDefault();
     const formData = new FormData();
-    for(i = 0; i < selectedFiles.length; i++){
+    for(var i = 0; i < selectedFiles.length; i++){
       formData.append('uploadFile[]', selectedFiles[i]);
     }
 
     $.ajax({
       type: 'POST',
-      url: '/data',
+      url: '/process',
       data: formData,
       dataType: 'json',
       processData: false,
@@ -86,6 +86,7 @@ window.onload = function(){
         console.log(selectedFiles.length)
       }
     })
-  });
 
+    //location.href = "./process"
+  });
 }
