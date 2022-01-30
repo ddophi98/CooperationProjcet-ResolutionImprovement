@@ -3,8 +3,9 @@
   <head>
     <link rel="stylesheet" href="/static/main.css">
     <link rel="stylesheet" href="/static/common.css">
+    <link rel="stylesheet" href="/static/loader.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="/static/fileprocess.js"></script>
+    <script src="/static/filesend.js"></script>
     <title>RIW</title>
   </head
 
@@ -40,6 +41,14 @@
       <div class="processing">
         <h1 class="title">Processing</h1>
         <h2>Please upload the files you want to process</h2>
+
+        <!-- 로딩 화면 -->
+        <div class="loader" style="display:none;"> </div>
+        <div class="container" style="display:none;">
+          <h1>로딩 후 화면</h1>
+        </div>
+
+        <!-- 기존 화면 -->
         <section id="sec">
           <div class="upload-box">
             Drag the files

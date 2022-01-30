@@ -12,10 +12,8 @@ def home():
 @app.route("/process", methods=['GET', 'POST'])
 def process():
     if request.method == 'POST':
-        print("111")
         for f in os.scandir("files"):
             os.remove(f.path)
-        print("222")
         files = request.files.getlist('uploadFile[]')
         for f in files:
             # 한글 파일명은 secure_filename 지원이 안됨
@@ -24,12 +22,11 @@ def process():
             f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         complete_file = open("files\complete.txt", 'w')
         complete_file.close()
-        print("333")
         return '', 200
-    else:
-        while not os.path.isfile("files\complete.txt"):
-            print("no")
-        print("yes")
+    elif request.method == 'GET':
+        while True:
+            if os.path.isfile("files\complete.txt"):
+                break
         return render_template('process.html')
 
 

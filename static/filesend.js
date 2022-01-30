@@ -68,16 +68,15 @@ window.onload = function(){
 
   // 파일 처리 버튼 눌렀을 때
   processBtn.addEventListener('click', function(e) {
-    console.log("100");
     e.preventDefault();
-    console.log("200");
-    console.log(selectedFiles.length);
-    console.log("300");
+    $(".loader").css("display","block");
+    $("#sec").css("display","none");
+
+    location.href = "./process"
     const formData = new FormData();
     for(var i = 0; i < selectedFiles.length; i++){
       formData.append('uploadFile[]', selectedFiles[i]);
     }
-    console.log("400");
     $.ajax({
       type: 'POST',
       url: '/process',
@@ -85,7 +84,5 @@ window.onload = function(){
       processData: false,
       contentType: false,
     })
-    console.log("500");
-    location.href = "./process";
   })
 }
