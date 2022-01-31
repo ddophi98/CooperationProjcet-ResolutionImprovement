@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html
   <head>
+    <link rel="stylesheet" href="/static/common.css">
+    <link rel="stylesheet" href="/static/process.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/process.js"></script>
     <title>RIW</title>
   </head
 
   <body>
-    <h1>머신러닝 진행할 페이지</h1>
+    <div class="header">
+      <h1><a href="main.html">Resolution Improvement Website</a></h1>
+    </div>
+
+    <div class="processing">
+      <h1 class="title">Process</h1>
+
+      {% for f in file_list %}
+      {% if (('mp4' in f) or ('webm' in f)): %}
+        <div class="process-container">
+          <div class="file-container">
+            <video controls muted style="width:200px;">
+              <source src="{{ url_for('static', filename='./uploaded_files/'+f) }}">
+              There is problem to show video
+            </video><br>
+            {{f}}
+          </div>
+          <progress id="progressBar" value="20" max="100"></progress>
+          <button id="download-btn" type="button" name="button">download</button>
+        </div>
+      {% else %}
+        <div class="process-container">
+          <div class="file-container">
+            <img src="{{ url_for('static', filename='./uploaded_files/'+f) }}" style="width:200px;"><br>
+            {{f}}
+          </div>
+          <progress id="progressBar" value="20" max="100"></progress>
+          <button id="download-btn" type="button" name="button">download</button>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="footer">
+      <div class="contact-info">
+        <p>Email: abcde@gmail.com</p>
+        <p>Phone number: 010-0000-0000</p>
+      </div
   </body>
 </html>

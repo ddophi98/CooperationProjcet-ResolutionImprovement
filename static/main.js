@@ -2,11 +2,11 @@ window.onload = function(){
   var sec = document.querySelector('#sec');
   var uploadBox = document.querySelector('.upload-box');
   var selectedZone = document.querySelector(".selected-zone");
-  var processBtn = document.querySelector('.process-btn');
+  var uploadBtn = document.querySelector('.upload-btn');
   var selectedFiles = [];
 
-  // 선택된 파일 처리하기
-  function processFiles(files){
+  // 선택된 파일 업로드 할 준비하기
+  function uploadFiles(files){
     if (files != null) {
       selectedZone.innerHTML = ""
       notAllowed = false;
@@ -19,7 +19,7 @@ window.onload = function(){
           notAllowed = true;
         }
       }
-      processBtn.style.display = 'block';
+      uploadBtn.style.display = 'block';
 
       if(notAllowed){
         alert("Not available to upload other files except image or video");
@@ -54,7 +54,7 @@ window.onload = function(){
      this.style.backgroundColor = 'white';
 
      var files = e.dataTransfer && e.dataTransfer.files;
-     processFiles(files)
+     uploadFiles(files)
 
   })
 
@@ -63,11 +63,11 @@ window.onload = function(){
   var inputBtn = document.querySelector(".input-btn");
   inputBtn.addEventListener('change', function(e) {
     var files = this.files;
-    processFiles(files);
+    uploadFiles(files);
   })
 
   // 파일 처리 버튼 눌렀을 때
-  processBtn.addEventListener('click', function(e) {
+  uploadBtn.addEventListener('click', function(e) {
     e.preventDefault();
     $(".loader").css("display","block");
     $("#sec").css("display","none");
@@ -78,12 +78,19 @@ window.onload = function(){
     }
     $.ajax({
       type: 'POST',
-      url: '/process',
+      url: '/upload',
       data: formData,
       processData: false,
       contentType: false,
     }).done(function(){
-      location.href = "./process"
+      location.href = "./upload"
+    }).fail(function() {
+      alert("Something's wrong. Please try again");
+      $(".loader").css("display","none");
+      $("#sec").css("display","block");
+      selectedZone.innerHTML = "";
+    }).always(function(){
+      $(".input-btn").val("");
     })
   })
 }

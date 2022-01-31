@@ -33,6 +33,12 @@ p{
   color: white;
 }
 
+.title{
+  background-color: rgb(255, 238, 218);
+  padding: 5px 0px 5px 20px;
+  font-family: 'Oswald';
+  border-bottom: solid 4px black;
+}
 
 
 .footer div{
