@@ -20,13 +20,8 @@ def process():
             # filename = secure_filename(f.filename)
             filename = f.filename
             f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        complete_file = open("files\complete.txt", 'w')
-        complete_file.close()
-        return '', 200
+        return 'success', 200
     elif request.method == 'GET':
-        while True:
-            if os.path.isfile("files\complete.txt"):
-                break
         return render_template('process.html')
 
 

@@ -72,7 +72,6 @@ window.onload = function(){
     $(".loader").css("display","block");
     $("#sec").css("display","none");
 
-    location.href = "./process"
     const formData = new FormData();
     for(var i = 0; i < selectedFiles.length; i++){
       formData.append('uploadFile[]', selectedFiles[i]);
@@ -83,6 +82,8 @@ window.onload = function(){
       data: formData,
       processData: false,
       contentType: false,
+    }).done(function(){
+      location.href = "./process"
     })
   })
 }
