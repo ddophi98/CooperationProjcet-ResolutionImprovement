@@ -26,8 +26,8 @@
             </video><br>
             {{f}}
           </div>
-          <progress id="progressBar" value="20" max="100"></progress>
-          <button id="download-btn" type="button" name="button">download</button>
+          <progress class="progressBar" value="0" max="100"></progress>
+          <button class="download-btn" type="button" name="button">download</button>
         </div>
       {% else %}
         <div class="process-container">
@@ -35,11 +35,13 @@
             <img src="{{ url_for('static', filename='./uploaded_files/'+f) }}" style="width:200px;"><br>
             {{f}}
           </div>
-          <progress id="progressBar" value="20" max="100"></progress>
-          <button id="download-btn" type="button" name="button">download</button>
+          <progress class="progressBar" value="0" max="100"></progress>
+          <button class="download-btn" type="button" name="button">download</button>
         </div>
       {% endif %}
     {% endfor %}
+
+    <button class="download-all-btn" type="button" name="button">download all</button>
 
     <div class="footer">
       <div class="contact-info">
