@@ -2,14 +2,13 @@ window.onload = function(){
   var timerId = setInterval(updateProgress, 500);
   var progressBars = document.getElementsByClassName('progressBar')
   var downloadBtns = document.getElementsByClassName('download-btn')
-  var downloadAllBtn = document.getElementById('download-all-btn')
 
   // 딥러닝 시작하기
   $.ajax({
     type: 'GET',
     url: '/deep_learning',
   }).done(function(){
-    $(".download-all").css("display","block");
+    $(".download-all-btn").css("display","block");
     clearInterval(timerId);
     alert("Finish to process files");
   }).fail(function() {
