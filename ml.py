@@ -1,11 +1,12 @@
-# import numpy as np
-# import tensorflow as tf
-# import cv2
-# import os
+import numpy as np
+import tensorflow as tf
+import cv2
+import os
+from PIL import Image
+
 
 uploaded_img_path = "./static/uploaded_files/"
 processed_img_path = "./static/processed_files/"
-# srgan = tf.keras.models.load_model('./model/srgan_G.h5')
 
 
 def interpolation(image):
@@ -16,26 +17,27 @@ def interpolation(image):
     )
     return bicubic_lr
 
-def apply_srgan(image):
+def apply_srgan(image, srgan):
     image = tf.cast(image[np.newaxis, ...], tf.float32)
     sr = srgan.predict(image)
-    sr = tf.clip_by_value(sr, o, 255)
+    sr = tf.clip_by_value(sr, 0, 255)
     sr = tf.round(sr)
-    sr = tf.cast(sr, tf.unit8)
+    sr = tf.cast(sr, tf.uint8)
     return np.array(sr)[0]
 
 
 def imageProcess():
-    print("wow")
-    # #작업하기 전 폴더 정리하기
-    # for f in os.scandir(processed_img_path):
-    #     os.remove(f.path)
-    #
-    # #SRGAN 적용하기
-    # file_list = os.listdir(uploaded_img_path)
-    # for f in file_list:
-    #     img = cv2.imread(uploaded_img_path + f)
-    #     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    #     img = interpolation(img)
-    #     sr_img = apply_srgan(img)
-    #     sr_img.save(processed_img_path + f)
+    #작업하기 전 폴더 정리하기
+    for f in os.scandir(processed_img_path):
+        os.remove(f.path)
+
+    #SRGAN 적용하기
+    srgan = tf.keras.models.load_model('./model/srgan_G.h5')
+    file_list = os.listdir(uploaded_img_path)
+    for f in file_list:
+        img = cv2.imread(uploaded_img_path + f)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = interpolation(img)
+        sr_img_arr = apply_srgan(img, srgan)
+        sr_img = Image.fromarray(sr_img_arr)
+        sr_img.save(processed_img_path + f)
