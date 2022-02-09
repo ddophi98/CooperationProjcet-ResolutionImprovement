@@ -1,6 +1,6 @@
 .process-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: solid 2px black;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -13,23 +13,45 @@
   font-weight: 500;
 }
 
-.progressBar{
-  margin: auto 0px;
-  height: 50px;
-  width: 800px;
-}
-
 .download-btn{
-  margin: auto 0px;
-  height: 50px;
+  margin: auto;
+  height: 60px;
   font-size:25px;
-  visibility: hidden;
+  display: none;
 }
 
 .download-all-btn{
-  margin: auto;
-  margin-bottom: 20px;
+  margin: 60px auto;
   height: 75px;
   font-size:50px;
   display: none;
+}
+
+.download-path{
+  text-decoration-line: none;
+}
+
+.btn-container{
+  width: 200px;
+  margin: auto 0px;
+}
+
+.loader {
+  z-index: 1;
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #3498db;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

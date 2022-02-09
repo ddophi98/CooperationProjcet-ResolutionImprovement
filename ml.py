@@ -7,7 +7,7 @@ from PIL import Image
 
 uploaded_img_path = "./static/uploaded_files/"
 processed_img_path = "./static/processed_files/"
-
+state = []
 
 def interpolation(image):
     bicubic_lr = cv2.resize(
@@ -27,17 +27,22 @@ def apply_srgan(image, srgan):
 
 
 def imageProcess():
+    global state
+
     #작업하기 전 폴더 정리하기
     for f in os.scandir(processed_img_path):
         os.remove(f.path)
 
-    #SRGAN 적용하기
     srgan = tf.keras.models.load_model('./model/srgan_G.h5')
     file_list = os.listdir(uploaded_img_path)
-    for f in file_list:
+    state = ['0' for _ in range(len(file_list))]
+
+    #SRGAN 적용하기
+    for idx, f in enumerate(file_list):
         img = cv2.imread(uploaded_img_path + f)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = interpolation(img)
         sr_img_arr = apply_srgan(img, srgan)
         sr_img = Image.fromarray(sr_img_arr)
         sr_img.save(processed_img_path + f)
+        state[idx] = '1'
