@@ -12,7 +12,7 @@ window.onload = function(){
       notAllowed = false;
       selectedFiles = []
       for(var i = 0, len = files.length; i < len; i++) {
-        if(files[i].type.includes("image") || files[i].type.includes("video")){
+        if(files[i].type.includes("image")){
           selectedZone.innerHTML += files[i].name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
           selectedFiles.push(files[i]);
         } else{
@@ -22,7 +22,7 @@ window.onload = function(){
       uploadBtn.style.display = 'block';
 
       if(notAllowed){
-        alert("Not available to upload other files except image or video");
+        alert("Not available to upload other files except image");
       }
     } else{
       alert("Fail to upload");

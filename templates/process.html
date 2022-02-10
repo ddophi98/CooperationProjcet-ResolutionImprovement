@@ -17,23 +17,6 @@
       <h1 class="title">Process</h1>
 
       {% for f in file_list %}
-      {% if (('mp4' in f) or ('webm' in f)): %}
-        <div class="process-container">
-          <div class="file-container">
-            <video controls muted style="width:200px;">
-              <source src="{{ url_for('static', filename='./uploaded_files/'+f) }}">
-              There is problem to show video
-            </video><br>
-            {{f}}
-          </div>
-          <div class="btn-container">
-            <div class="loader"> </div>
-            <a class="download-path" href="{{ url_for('static', filename='./processed_files/'+f) }}" download={{f}}>
-              <button class="download-btn" type="button" name="button">Download</button>
-            </a>
-          </div>
-        </div>
-      {% else %}
         <div class="process-container">
           <div class="file-container">
             <img src="{{ url_for('static', filename='./uploaded_files/'+f) }}" style="width:200px;"><br>
@@ -46,15 +29,10 @@
             </a>
           </div>
         </div>
-      {% endif %}
     {% endfor %}
 
     <button class="download-all-btn" type="button" name="button">Download All</button>
 
-    <div class="footer">
-      <div class="contact-info">
-        <p>Email: abcde@gmail.com</p>
-        <p>Phone number: 010-0000-0000</p>
-      </div
+
   </body>
 </html>
