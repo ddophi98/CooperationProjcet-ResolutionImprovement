@@ -10,7 +10,9 @@
 
   <body>
     <div class="header">
-      <h1><a href="main.html">Resolution Improvement Website</a></h1>
+      <a href="/"><img src="../static/images/home_icon.png"></a>
+      <h1>Resolution Improvement Website</h1>
+      <div class="empty"></div>
     </div>
 
     <div class="processing">
@@ -19,7 +21,7 @@
       {% for f in file_list %}
         <div class="process-container">
           <div class="file-container">
-            <img src="{{ url_for('static', filename='./uploaded_files/'+f) }}" style="width:200px;"><br>
+            <img src="{{ url_for('static', filename='./uploaded_files/'+f) }}" style="width:250px;"><br>
             {{f}}
           </div>
           <div class="btn-container">

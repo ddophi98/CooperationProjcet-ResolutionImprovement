@@ -4,6 +4,7 @@
 
 body {
   max-width: 1200px;
+  min-width: 850px;
   margin: 0 auto;
   margin-top: 20px;
 }
@@ -12,25 +13,23 @@ p{
   font-size: 20px;
 }
 
+.empty{
+  width: 100px
+}
+
 .header {
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content:space-between;
   background-color: rgb(53, 72, 157);
   color: white;
   height: 90px;
   line-height: 45px;
 }
 
-.header h1 a{
-  text-decoration-line: none;
-  text-decoration: none;
-}
-.header h1 a:link{
-  color: white;
-}
-.header h1 a:visited{
-  color: white;
+.header a img{
+  width:60px;
+  margin: 15px 0px 0px 40px;
 }
 
 .title{

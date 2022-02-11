@@ -8,21 +8,8 @@
 }
 
 .introduction-container p{
-  margin-right: 20px;
-}
-
-.photo-explanation{
   text-align: center;
-}
-
-.photo-container{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-.photo-container .photo{
-  padding-right: 10px;
+  font-size: 30px;
 }
 
 .uploading h2{
@@ -59,6 +46,7 @@
 }
 
 .selected-zone{
+  word-wrap: break-word;
   font-size: 18px;
   font-weight: 500;
   padding: 12px;
