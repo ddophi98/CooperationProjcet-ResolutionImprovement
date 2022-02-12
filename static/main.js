@@ -69,28 +69,34 @@ window.onload = function(){
   // 파일 처리 버튼 눌렀을 때
   uploadBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    $(".loader").css("display","block");
-    $("#sec").css("display","none");
 
-    const formData = new FormData();
-    for(var i = 0; i < selectedFiles.length; i++){
-      formData.append('uploadFile[]', selectedFiles[i]);
+    if(selectedFiles.length == 0){
+      alert("Select at least one file");
+    }else{
+      $(".loader").css("display","block");
+      $("#sec").css("display","none");
+
+      const formData = new FormData();
+      for(var i = 0; i < selectedFiles.length; i++){
+        formData.append('uploadFile[]', selectedFiles[i]);
+      }
+
+      $.ajax({
+        type: 'POST',
+        url: '/upload',
+        data: formData,
+        processData: false,
+        contentType: false,
+      }).done(function(){
+        location.href = "./upload"
+      }).fail(function() {
+        alert("Something's wrong. Please try again");
+        $(".loader").css("display","none");
+        $("#sec").css("display","block");
+        selectedZone.innerHTML = "";
+      }).always(function(){
+        $(".input-btn").val("");
+      })
     }
-    $.ajax({
-      type: 'POST',
-      url: '/upload',
-      data: formData,
-      processData: false,
-      contentType: false,
-    }).done(function(){
-      location.href = "./upload"
-    }).fail(function() {
-      alert("Something's wrong. Please try again");
-      $(".loader").css("display","none");
-      $("#sec").css("display","block");
-      selectedZone.innerHTML = "";
-    }).always(function(){
-      $(".input-btn").val("");
-    })
   })
 }
