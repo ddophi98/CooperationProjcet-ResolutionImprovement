@@ -10,12 +10,12 @@
 - 학습 데이터와 학습 시간이 부족하다 보니 특정 이미지에 대해서는 오히려 상태가 안좋아지기도 합니다. 
 
 <div style="display:flex">
-  <img width="200" src="https://user-images.githubusercontent.com/72330884/156921775-d6a783e6-dd1d-444b-9734-365ecf00d260.PNG">
-  <img width="200" src="https://user-images.githubusercontent.com/72330884/156921776-5aa9f8c1-4682-45fc-b2d1-91acd18547e8.PNG">
+  <img height="500" src="https://user-images.githubusercontent.com/72330884/156921775-d6a783e6-dd1d-444b-9734-365ecf00d260.PNG">
+  <img height="500" src="https://user-images.githubusercontent.com/72330884/156922010-887801ab-f9a5-43b6-b52c-e5ca08371903.PNG">
 </div>
 
 Before / After
 <div style="display:flex">
-  <img width="200" src="https://user-images.githubusercontent.com/72330884/156921777-728cb7f1-f67a-4872-a1ac-ffb02e06bec1.jpg">
-  <img width="200" src="https://user-images.githubusercontent.com/72330884/156921778-239375b3-3e38-4859-ba12-f891b21d7b38.jpg">
+  <img width="400" src="https://user-images.githubusercontent.com/72330884/156921777-728cb7f1-f67a-4872-a1ac-ffb02e06bec1.jpg">
+  <img width="400" src="https://user-images.githubusercontent.com/72330884/156921778-239375b3-3e38-4859-ba12-f891b21d7b38.jpg">
 </div>
