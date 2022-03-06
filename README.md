@@ -13,8 +13,9 @@
   <img height="500" src="https://user-images.githubusercontent.com/72330884/156922010-887801ab-f9a5-43b6-b52c-e5ca08371903.PNG">
 </div>
 
-Before / After
+
+# Before / After
 <div style="display:flex">
-  <img width="600" src="https://user-images.githubusercontent.com/72330884/156921777-728cb7f1-f67a-4872-a1ac-ffb02e06bec1.jpg">
-  <img width="600" src="https://user-images.githubusercontent.com/72330884/156921778-239375b3-3e38-4859-ba12-f891b21d7b38.jpg">
+  <img width="800" src="https://user-images.githubusercontent.com/72330884/156921777-728cb7f1-f67a-4872-a1ac-ffb02e06bec1.jpg">
+  <img width="800" src="https://user-images.githubusercontent.com/72330884/156921778-239375b3-3e38-4859-ba12-f891b21d7b38.jpg">
 </div>
