@@ -5,8 +5,8 @@
 - 링크: http://ddophi.pythonanywhere.com/  
 
 <div style="display:flex">
-  <img height="500" src="https://user-images.githubusercontent.com/72330884/156921775-d6a783e6-dd1d-444b-9734-365ecf00d260.PNG">
-  <img height="500" src="https://user-images.githubusercontent.com/72330884/156922010-887801ab-f9a5-43b6-b52c-e5ca08371903.PNG">
+  <img height="400" src="https://user-images.githubusercontent.com/72330884/156921775-d6a783e6-dd1d-444b-9734-365ecf00d260.PNG">
+  <img height="400" src="https://user-images.githubusercontent.com/72330884/156922010-887801ab-f9a5-43b6-b52c-e5ca08371903.PNG">
 </div>
 
 # Before / After
